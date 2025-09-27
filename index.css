@@ -1,0 +1,302 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuentes y colores */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: #0077b6;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+nav ul li {
+  position: relative;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: #fff; /* Mantener color blanco siempre */
+}
+
+nav ul li:hover {
+  background-color: #023e8a;
+  color: #fff; /* No cambia el color al hacer hover */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Submenu */
+nav ul li ul {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #023e8a;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 100;
+}
+
+nav ul li:hover ul {
+  display: flex;
+}
+
+nav ul li ul li {
+  padding: 5px 0;
+  color: #fff; /* Mantener color blanco en submenu */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Sin subrayado */
+}
+
+nav ul li ul li:hover {
+  background-color: #01509e;
+  color: #fff; /* Sin cambio de color */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Main content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contenedor flex para las secciones (padre) */
+.padre {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Cada sección (hijo) */
+.hijo {
+  background: #fff;
+  flex: 1 1 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgb(0 0 0 / 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hijo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+}
+
+.hijo h2 {
+  margin-bottom: 15px;
+  color: #0077b6;
+  font-size: 1.8rem;
+}
+
+.hijo img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.hijo p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Redes sociales */
+.social {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.social h2 {
+  margin-bottom: 20px;
+  color: #0077b6;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Redes sociales: fondo degradado, sombra, animación y escala */
+
+/* Base para todos */
+.social a {
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 2.2rem;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  color: #fff; /* íconos blancos para buen contraste */
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background: var(--social-gradient-start); /* Gradiente personalizado */
+}
+
+/* Animación rebote */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.social a:hover {
+  transform: translateY(-6px) scale(1.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  background: var(--social-gradient-hover);
+}
+
+.social a:hover i {
+  animation: bounce 0.5s ease;
+}
+
+/* Colores con degradados para cada red */
+
+.facebook {
+  --social-gradient-start: linear-gradient(135deg, #4c69ba, #3b5998);
+  --social-gradient-hover: linear-gradient(135deg, #3b5998, #2d4373);
+}
+
+.instagram {
+  --social-gradient-start: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  --social-gradient-hover: linear-gradient(135deg, #dd2a7b, #8134af, #515bd4, #f58529);
+}
+
+.twitter {
+  --social-gradient-start: linear-gradient(135deg, #55acee, #2795e9);
+  --social-gradient-hover: linear-gradient(135deg, #2795e9, #1c7ed6);
+}
+
+.youtube {
+  --social-gradient-start: linear-gradient(135deg, #ff0000, #cc0000);
+  --social-gradient-hover: linear-gradient(135deg, #cc0000, #990000);
+}
+
+.whatsapp {
+  --social-gradient-start: linear-gradient(135deg, #25d366, #128c7e);
+  --social-gradient-hover: linear-gradient(135deg, #128c7e, #075e54);
+}
+
+.tiktok {
+  --social-gradient-start: linear-gradient(135deg, #69c9d0, #ee1d52);
+  --social-gradient-hover: linear-gradient(135deg, #ee1d52, #69c9d0);
+}
+
+.linkedin {
+  --social-gradient-start: linear-gradient(135deg, #0077b5, #005983);
+  --social-gradient-hover: linear-gradient(135deg, #005983, #003d54);
+}
+
+.discord {
+  --social-gradient-start: linear-gradient(135deg, #7289da, #5b6eae);
+  --social-gradient-hover: linear-gradient(135deg, #5b6eae, #39475a);
+}
+
+.twitch {
+  --social-gradient-start: linear-gradient(135deg, #9146ff, #6c32b8);
+  --social-gradient-hover: linear-gradient(135deg, #6c32b8, #4a1f8b);
+}
+
+.telegram {
+  --social-gradient-start: linear-gradient(135deg, #00a2ff, #0068b7);
+  --social-gradient-hover: linear-gradient(135deg, #0091e6, #004f8a);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 1rem;
+  color: #888;
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .padre {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Estilos para los enlaces del menú principal */
+nav ul li > a {
+  color: #f0f0f0; /* Color más claro pero no subrayado */
+  text-decoration: none; /* Quitar subrayado */
+  font-weight: 600;
+}
+
+nav ul li > a:hover {
+  color: #caf0f8; /* Cambio suave al hacer hover */
+  text-decoration: none;
+}
+
+/* Para los items sin enlace como "Reportes", que tiene submenu */
+nav ul li:not(:has(ul)) {
+  color: #f0f0f0;
+}
+
+nav ul li:hover {
+  background-color: #023e8a;
+}
+
+/* Estilo para el submenu (Reportes) */
+nav ul li ul {
+  background: #014f86;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+nav ul li ul li a {
+  color: #d0e7f9; /* Un azul claro para submenu */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li ul li a:hover {
+  background-color: #0164c8;
+  color: #fff;
+  text-decoration: none;
+}

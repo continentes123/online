@@ -1,0 +1,74 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 35px 45px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+header h1 {
+  color: #0077b6;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.padre {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.padre p {
+  flex: 1 1 350px;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: justify;
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+.padre img {
+  flex: 1 1 350px;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.padre img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 800px) {
+  .padre {
+    flex-direction: column;
+  }
+  
+  .padre p, .padre img {
+    max-width: 90%;
+    flex: none;
+  }
+}

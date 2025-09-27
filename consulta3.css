@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 35px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #a3d2ca;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: 600;
+    color: #dbe7e4;
+}
+
+input[type="text"],
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #f0f0f0;
+}
+
+input[type="text"]:focus,
+select:focus,
+input[type="number"]:focus {
+    box-shadow: 0 0 8px 2px #a3d2ca;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: #4caf50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.6);
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #388e3c;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #a3d2ca;
+    padding: 10px;
+    text-align: center;
+    color: #dbe7e4;
+    font-weight: 600;
+}
+
+th {
+    background-color: #2a5298;
+}
+
+.resultado {
+    margin-top: 22px;
+    padding: 16px;
+    background: #3aafa9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(58, 175, 169, 0.75);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}

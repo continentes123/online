@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cálculo de Importe por Examen de Admisión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #222;
+            padding: 25px 30px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.7);
+        }
+        h1 {
+            text-align: center;
+            color: #90caf9;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background-color: #90caf9;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #121212;
+        }
+        button:hover {
+            background-color: #64b5f6;
+        }
+        .resultado {
+            margin-top: 15px;
+            padding: 12px;
+            background: #1976d2;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(25, 118, 210, 0.7);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Cálculo de Importe por Examen de Admisión</h1>
+
+    <form method="POST" action="">
+        <label for="procedencia">Procedencia del colegio:</label>
+        <select id="procedencia" name="procedencia" required>
+            <option value="">--Seleccione--</option>
+            <option value="NACIONAL" <?php if(isset($_POST['procedencia']) && $_POST['procedencia'] === 'NACIONAL') echo 'selected'; ?>>Colegio Nacional</option>
+            <option value="PARTICULAR" <?php if(isset($_POST['procedencia']) && $_POST['procedencia'] === 'PARTICULAR') echo 'selected'; ?>>Colegio Particular</option>
+        </select>
+
+        <label for="importe">Importe a pagar (en soles):</label>
+        <input type="number" id="importe" name="importe" min="1" required value="<?php echo isset($_POST['importe']) ? htmlspecialchars($_POST['importe']) : ''; ?>" />
+
+        <button type="submit">Calcular Importe a Pagar</button>
+    </form>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $procedencia = $_POST['procedencia'];
+    $importe = floatval($_POST['importe']);
+
+    if ($procedencia === "NACIONAL") {
+        $descuento = 0.10;  
+    } else if ($procedencia === "PARTICULAR") {
+        $descuento = 0.03;  
+    } else {
+        $descuento = 0; 
+    }
+
+    $montoDescuento = $importe * $descuento;
+    $importeFinal = $importe - $montoDescuento;
+
+    echo "<div class='resultado'>";
+    echo "<p>Procedencia: <strong>$procedencia</strong></p>";
+    echo "<p>Importe original: <strong>S/" . number_format($importe, 2) . "</strong></p>";
+    echo "<p>Descuento aplicado: <strong>S/" . number_format($montoDescuento, 2) . "</strong></p>";
+    echo "<p>Importe a pagar: <strong>S/" . number_format($importeFinal, 2) . "</strong></p>";
+    echo "</div>";
+}
+?>
+
+</div>
+
+</body>
+</html>

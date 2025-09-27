@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    align-items: center;
+}
+
+.container {
+    background: #1e1e1e;
+    padding: 30px 35px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 8px 30px rgba(25, 118, 210, 0.9);
+}
+
+h1 {
+    text-align: center;
+    color: #90caf9;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 1.9rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: 600;
+    color: #b3d4fc;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    color: #121212;
+    background-color: #90caf9;
+    box-shadow: inset 2px 2px 8px #6ea8e6, inset -2px -2px 8px #b9dcff;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    background-color: #64b5f6;
+    box-shadow: 0 0 12px 3px #64b5f6;
+    color: #121212;
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: #90caf9;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #121212;
+    box-shadow: 0 6px 15px rgba(144, 202, 249, 0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #64b5f6;
+    box-shadow: 0 8px 25px rgba(100, 181, 246, 0.9);
+}
+
+.resultado {
+    margin-top: 30px;
+    background: #1976d2;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.8);
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.resultado p {
+    margin: 8px 0;
+}
